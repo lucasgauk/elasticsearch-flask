@@ -38,7 +38,8 @@ sudo apt-get install metricbeat
 ```
 
 2. Navigate to `/etc/metricbeat/` and edit the metricbeat.yml file. In the kibana section, edit the host to match the IP of your kibana instance. In the outputs section, edit the outputs.elasticsearch hosts to point to your elasticsearch IP. Restart the metricbeat.service.
-3.Verify that your Kibana instance is receiving information from Metricbeat.
+3. Navigate to `/etc/metricbeat/modules.d` and run `cp docker.yml.disabled docker.yml` to enable docker exporting. 
+4.Verify that your Kibana instance is receiving information from Metricbeat.
 
 You can now monitor the request volume and response time of your Flask app, along with basic information about the docker instance that's running it. 
 
